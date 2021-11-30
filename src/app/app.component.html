@@ -1,0 +1,12 @@
+<div *ngIf="vm$ | async as vm">
+  <ul>
+    <li id="random-beer-list" *ngFor="let u of vm.beerArray">
+      Brand: {{ u.brand }}, Alcohol: {{ u.alcohol }}, Hop: {{ u.hop }}
+    </li>
+  </ul>
+  <input
+    id="input-rand-beer"
+    type="number"
+    (change)="facadeService.updateSize($event)"
+  />
+</div>
